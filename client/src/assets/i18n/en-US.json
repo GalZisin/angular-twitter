@@ -1,0 +1,23 @@
+{
+    "logo": "Twitter",
+    "app_title": "App Twitter",
+    "home_nav": "Home",
+    "login_nav": "Login",
+    "register_nav": "Register",
+    "logout_nav": "Logout",
+    "home_page_title": "Tweets",
+    "login_page_title": "Login",
+    "register_page_title": "Register",
+    "submit": "Submit",
+    "login": "Login",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "tweet": "Post tweet",
+    "post_tweet": "Post tweet...",
+    "profile_page": "Profile Page",
+    "username": "Username",
+    "registration_date": "Registration date",
+    "last_login_date": "Last login date",
+    "language": "English"
+}

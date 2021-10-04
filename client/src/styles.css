@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.my-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+.login_title,
+.register_title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+}
+
+.my-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn_login,
+.btn_register {
+    display: flex;
+    justify-content: center !important;
+}
+
+.green-snackbar {
+    background-color: #006600;
+    color: #fff;
+}
+
+
+/* .profile_icon {
+    cursor: pointer;
+} */
+
+.error_message {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f34336;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+.lang {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 5px;
+}
+
+.lang_pressed {
+    display: flex;
+    justify-content: flex-end;
+    color: #ff4081;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+@media (max-width: 767px) {
+    .card {
+        width: 100%;
+    }
+    .my-card {
+        width: 90%;
+    }
+}

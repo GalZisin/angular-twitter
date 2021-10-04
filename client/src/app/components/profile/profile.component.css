@@ -1,0 +1,27 @@
+.profile_box {
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+    border: 1px solid green;
+    padding: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.user_data {
+    display: flex;
+    flex-direction: column;
+}
+
+.user_data_item {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+    .card_image {
+        display: flex;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+}

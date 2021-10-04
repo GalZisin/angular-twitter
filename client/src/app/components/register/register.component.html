@@ -1,0 +1,52 @@
+<div class="container">
+    <mat-card class="my-card">
+        <div class="register_title">{{ 'register_page_title' | translate }}</div>
+        <ng-container *ngIf="error">
+            <div class="error_message">{{error}}</div>
+        </ng-container>
+        <mat-card-content>
+            <form (ngSubmit)="register()" [formGroup]="registerForm" class="my-form">
+                <mat-form-field class="full-width">
+                    <mat-label>{{ 'name' | translate }}</mat-label>
+                    <input formControlName="name" matInput placeholder="" name="name">
+                    <mat-error *ngIf="registerForm.controls['name'].hasError('required')">Name is Required!</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>{{ 'email' | translate }}</mat-label>
+                    <input formControlName="email" matInput placeholder="" name="email">
+                    <mat-error *ngIf="registerForm.controls['email'].hasError('required')">Email is Required!</mat-error>
+                    <mat-error *ngIf="registerForm.controls['email'].hasError('email')">Enter a valid email address!</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="full-width">
+                    <mat-label>{{ 'password' | translate }}</mat-label>
+                    <input formControlName="password" matInput placeholder="" name="password" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-error *ngIf="registerForm.controls['password'].hasError('required')">Password is Required!</mat-error>
+                    <mat-error *ngIf="registerForm.controls['password'].hasError('minlength')">Password must be at least 8 characters!</mat-error>
+                    <mat-error *ngIf="registerForm.controls['password'].hasError('hasNumber')">Password must contain at least 1 number!</mat-error>
+                    <mat-error *ngIf="registerForm.controls['password'].hasError('hasCapitalCase')">Password must contain at least 1 Letter in Capital Case!</mat-error>
+                    <mat-error *ngIf="registerForm.controls['password'].hasError('hasSmallCase')">Password must contain at least 1 Letter in Small Case!</mat-error>
+                </mat-form-field>
+
+                <!-- registerForm.value.name -->
+                <div>
+                    <input (change)="onFileSelect($event)" type="file" name="image" />
+                </div>
+                <div *ngIf="imageData">
+                    <img [src]="imageData" [alt]="registerForm.value.name" />
+                </div>
+
+
+                <div class="btn_register">
+                    <button style="margin-top: 30px;" [disabled]="registerForm.invalid" type="submit" mat-raised-button color="primary">{{ 'submit' | translate }}</button>
+                </div>
+            </form>
+
+        </mat-card-content>
+
+    </mat-card>
+</div>

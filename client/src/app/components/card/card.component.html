@@ -1,0 +1,33 @@
+<div class="card_style">
+    <img src="/assets/images/dog_image.jpg" class="card_image" alt="image" />
+
+    <div class="card_content">
+        <div class="card_poster_date">
+            {{tweet?.memberId?.username}} - {{tweet?.postDate | date: 'dd/MM/YYYY' }}
+        </div>
+        <div class="card_text">
+            {{tweet?.text}}
+        </div>
+    </div>
+    <div class="card_buttons">
+        <div class="card_icons">
+            <ng-container *ngIf="isAuth && (tweet?.memberId?._id === userData.member?.memberId)">
+                <mat-icon class="deleteIcon" (click)="deleteTweet(tweet)">delete</mat-icon>
+            </ng-container>
+            <ng-container *ngIf="isAuth">
+                <mat-icon class="replyIcon" (click)="replyDialog()">reply</mat-icon>
+            </ng-container>
+
+            <ng-container *ngIf="!isAuth; else auth">
+                <div matTooltip="SignIn to vote with a star " matTooltipPosition="left" style="display: flex;">
+                    <span class="stars_counter">{{starCounter}}</span>
+                    <mat-icon class="starIcon" (click)="handleToggleStar(tweet?._id!)">star</mat-icon>
+                </div>
+            </ng-container>
+            <ng-template #auth>
+                <span class="stars_counter">{{starCounter}}</span>
+                <mat-icon class="starIcon" (click)="handleToggleStar(tweet?._id!)">star</mat-icon>
+            </ng-template>
+        </div>
+    </div>
+</div>

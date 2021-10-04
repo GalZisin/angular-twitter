@@ -1,0 +1,32 @@
+<nav class="navbar" [ngSwitch]="!(authService.isAuthenticated | async)">
+    <a href="#" class="nav-logo">{{ 'logo' | translate }}</a>
+    <ul class="nav-menu">
+        <ng-container>
+            <a [ngClass]="clicked_en ? 'lang_pressed' : 'lang'" href="javascript:void(0)" (click)="changeLanguage('en-US')">English</a>
+            <span style="margin-right: 5px; color: #fff;">/</span>
+            <a [ngClass]="clicked_ru ? 'lang_pressed' : 'lang'" href="javascript:void(0)" (click)="changeLanguage('ru-RU')">Русский</a>
+        </ng-container>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/home" (click)="showSidebar()">Home</a>
+        </li>
+        <ng-container *ngIf="!isLoaded">
+            <li class="nav-item">
+                <a class="nav-link" *ngSwitchCase="true" routerLink="/login" (click)="showSidebar()">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngSwitchCase="true" routerLink="/register" (click)="showSidebar()">Register</a>
+            </li>
+            <li class="nav-item">
+                <div *ngSwitchCase="false" class="profile_icon" [routerLink]="['/profile', user.member?.memberId!]" (click)="showSidebar()"></div>
+            </li>
+            <li class=" nav-item" (click)="showSidebar()">
+                <app-logout *ngSwitchCase="false"></app-logout>
+            </li>
+        </ng-container>
+    </ul>
+    <div class="hamburger " (click)="mobileMenu() ">
+        <span class="bar "></span>
+        <span class="bar "></span>
+        <span class="bar "></span>
+    </div>
+</nav>

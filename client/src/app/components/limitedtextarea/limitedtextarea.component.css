@@ -1,0 +1,42 @@
+/* mat-form-field {
+    margin-right: 12px;
+} */
+
+.textarea {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-left: 0px;
+}
+
+.btn_post_tweet {
+    position: absolute;
+    top: 110px;
+    right: 20px;
+    block-size: 45px;
+}
+
+.char_counter {
+    position: absolute;
+    top: 120px;
+    right: 120px;
+    block-size: 45px;
+}
+
+textarea {
+    resize: horizontal;
+    /* resize: none; */
+    padding: 5px;
+}
+
+mat-form-field {
+    width: 600px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+    mat-form-field {
+        width: 350px;
+        margin-bottom: 20px;
+    }
+}

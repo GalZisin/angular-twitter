@@ -1,0 +1,122 @@
+ .card_style {
+     display: flex;
+     justify-content: flex-start;
+     background-color: #fff;
+     width: 100%;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     border-radius: 4px;
+     margin-bottom: 30px;
+ }
+ 
+ .card_content {
+     display: flex;
+     justify-content: center;
+ }
+ 
+ .card_image {
+     width: 200px;
+     height: 200px;
+     border-radius: 5px 5px 0 0;
+     object-fit: cover;
+     margin: 10px 10px;
+ }
+ 
+ .card_content {
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+ }
+ 
+ .card_poster_date {
+     padding-top: 30px;
+     display: flex;
+     justify-content: flex-start;
+ }
+ 
+ .card_text {
+     padding-top: 30px;
+     align-content: center;
+ }
+ 
+ .card_buttons {
+     display: flex;
+     flex-direction: row;
+     align-self: flex-end;
+     justify-content: flex-end;
+     flex-grow: 1;
+     padding-bottom: 20px;
+     padding-right: 10px;
+ }
+ 
+ .card_icons {
+     display: flex;
+     flex-direction: row;
+ }
+ 
+ .starIcon {
+     color: #000;
+ }
+ 
+ .deleteIcon,
+ .replayIcon,
+ .starIcon,
+ .replyIcon {
+     font-size: 30px !important;
+     margin-right: 5px;
+ }
+ 
+ .deleteIcon:hover {
+     color: red;
+     cursor: pointer;
+ }
+ 
+ .starIcon:hover {
+     color: #f4b400;
+     cursor: pointer;
+ }
+ 
+ .replyIcon:hover {
+     color: darkblue;
+     cursor: pointer;
+ }
+ 
+ .stars_counter {
+     padding: 5px 2px 0 5px;
+     font-size: 25px;
+ }
+ 
+ .my-card {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     width: 500px;
+ }
+ 
+ @media (max-width: 767px) {
+     .card_style {
+         flex-direction: column;
+         /* justify-content: unset; */
+     }
+     .card_buttons {
+         align-self: flex-end;
+         justify-content: center;
+         margin-top: 5px;
+     }
+     .card_image {
+         display: flex;
+         width: 100px;
+         height: 100px;
+         margin: 0 auto;
+     }
+     .card_content {
+         justify-content: center;
+     }
+     .card_poster_date {
+         justify-content: center;
+     }
+     .card_text {
+         display: flex;
+         justify-content: center;
+         text-align: center;
+     }
+ }

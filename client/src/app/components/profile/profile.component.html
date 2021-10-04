@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>{{ 'profile_page' | translate }}</h1>
+    <div class="profile_box">
+        <div class="profile_image">
+            <img src="/assets/images/dog_image.jpg" class="card_image" alt="image" />
+        </div>
+        <div className="user_data">
+            <div class="user_data_item"><span>{{ 'username' | translate }}: </span>{{userData?.member?.username}}</div>
+            <div class="user_data_item"><span>{{ 'registration_date' | translate }}: </span>{{userData?.member?.registrationDate | date: 'dd/MM/YYYY'}}</div>
+            <div class="user_data_item"><span>{{ 'last_login_date' | translate }}: </span>{{userData?.member?.lastLoginDate | date: 'dd/MM/YYYY'}}</div>
+        </div>
+    </div>
+    <div class="card" *ngFor="let tweet of tweets; let i = index">
+        <app-card [tweet]="tweet" (isDeleted)="isTweetDeleted($event)"></app-card>
+    </div>

@@ -1,0 +1,14 @@
+<div class="textarea">
+    <form (ngSubmit)="handleSubmitPost($event)" [formGroup]="textForm">
+        <mat-form-field appearance="fill">
+            <textarea formControlName="text" type="text" matInput (keyup)="getVal(message.value)" placeholder="{{ 'post_tweet' | translate }}" maxlength="240" cdkAutosizeMinRowa="1" cdkAutosizeMaxRows="5" #message></textarea>
+            <!-- <mat-error *ngIf="this.textForm.controls.text.hasError('required')">
+                It is required field
+            </mat-error> -->
+            <mat-hint align="end">{{message.value.length}}/240</mat-hint>
+            <button [disabled]="!message.value || message.value.length>=240" mat-raised-button style="margin-top: 20px;" color="accent" type="submit">
+                {{ 'tweet' | translate }}
+              </button>
+        </mat-form-field>
+    </form>
+</div>
